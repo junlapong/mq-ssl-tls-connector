@@ -8,11 +8,9 @@ This package was originally released as `SupportPac MO04`.
 If you wish to contribute to this package, please read `CLA.md` 
 for the IBM Contributor License Agreement.
 
-## Overview
-
-
+## Scenario
 The following scenario will be used for detailing the steps on enabling SSL support.
-The diagram above shows App1, a sample Java application running in a non-IBM JVM instance which uses MQ Client libraries to connect to MQ queue manager.
+The diagram shows App1, a sample Java application running in a non-IBM JVM instance which uses MQ Client libraries to connect to MQ queue manager.
 
 The queue manager is enabled for SSL connections and a channel APP1.SVRCONN is defined with SSL authentication. This server-connection channel is used by APP1 to connect to the MQ Queue Manager.
 
@@ -69,8 +67,8 @@ public class WmqSslTest {
         
         // SSL details
         props.put(MQC.SSL_CIPHER_SUITE_PROPERTY, "SSL_RSA_WITH_RC4_128_MD5");
-        String keyStorePath   = "keystore.jks";
-        String trustStorePath = "keystore.jks";
+        String keyStorePath   = "/path/to/keystore.jks";
+        String trustStorePath = "/path/to/keystore.jks";
         String password       = "passw0rd";
 
         // Create a keystore object for the keystore
