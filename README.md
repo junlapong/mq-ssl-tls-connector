@@ -145,10 +145,11 @@ public class WmqSslTest {
  - [Configuring WebSphere Application Server to support TLS 1.2](https://www.ibm.com/support/knowledgecenter/en/SS2L6K_5.0.0/com.ibm.rational.relm.install.doc/topics/t_enable_tls1.2_was.html)
  - [Manage FIPS](https://www.ibm.com/support/knowledgecenter/en/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/usec_manage_fips.html)
  - [Configure FIPS mode for DB2 and WebSphere](https://www.ibm.com/developerworks/data/library/techarticle/dm-ind-configure-fips-db2-ws/index.html)
+ - [SSL configuration of the Websphere MQ Java/JMS client](https://www.ibm.com/developerworks/websphere/library/techarticles/0510_fehners/0510_fehners.html)
  - [Using SSL with IBM MQ classes for JMS](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_8.0.0/com.ibm.mq.dev.doc/q032390_.htm)
    - [SSL/TLS CipherSpecs and CipherSuites in IBM MQ classes for JMS](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_8.0.0/com.ibm.mq.dev.doc/q113220_.htm)
-
+- [Sample Java client for IBM MQ Consumer and Producer](https://riyafa.wordpress.com/2016/02/21/sample-java-client-for-websphere-mq-consumer-and-producer/)
+- [Creating and running a Java JMS client for IBM Websphere MQ, from the ground up](http://www.kevinboone.net/simplewmqclient.html)
 
 [figure1]: https://github.com/junlapong/mq-tls-ssl-wizard/raw/master/media/mq_ssl_tls_overview.png "MQ SSL/TLS Overview"
 [figure2]: https://github.com/junlapong/mq-tls-ssl-wizard/raw/master/media/ssl_tls_keysharing.png "SSL/TLS Keysharing"
-[figure3]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
