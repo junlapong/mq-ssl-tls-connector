@@ -52,7 +52,10 @@ public class WmqSslTest {
 
     /**
      * Main method
-     * Example MQSC to define SVRCONN: DEF CHL(TEST.SSL.CHL) CHLTYPE(SVRCONN) SSLCIPH(RC4_MD5_US)
+     * Example MQSC to define
+     *      SVRCONN: DEF CHL(TEST.SSL.CHL)
+     *      CHLTYPE(SVRCONN)
+     *      SSLCIPH(RC4_MD5_US)
      * @param args Unused
      * @throws Exception No exception handling
      */
@@ -66,7 +69,7 @@ public class WmqSslTest {
         props.put(MQC.PORT_PROPERTY,      new Integer(1414));
         
         // SSL details
-        props.put(MQC.SSL_CIPHER_SUITE_PROPERTY, "SSL_RSA_WITH_RC4_128_MD5");
+        props.put(MQC.SSL_CIPHER_SUITE_PROPERTY, "SSL_RSA_WITH_AES_128_CBC_SHA256");
         String keyStorePath   = "/path/to/keystore.jks";
         String trustStorePath = "/path/to/keystore.jks";
         String password       = "passw0rd";

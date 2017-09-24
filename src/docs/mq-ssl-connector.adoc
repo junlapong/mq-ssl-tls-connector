@@ -1,0 +1,91 @@
+= IBM MQ SSL Connection with Java
+Junlapong L.
+25 September 2017
+:toc: right
+
+== Introduction
+
+image::http://asciidoctor.org/images/octocat.jpg[GitHub mascot]
+
+The following scenario will be used for detailing the steps on enabling SSL support.
+The diagram shows App1, a sample Java application running in a non-IBM JVM instance which uses MQ Client libraries to connect to MQ queue manager.
+
+=== MQ queue manager
+
+The queue manager is enabled for SSL connections and a channel APP1.SVRCONN is defined with SSL authentication. This server-connection channel is used by APP1 to connect to the MQ Queue Manager.
+
+image::mq_ssl_tls_overview.png[]
+
+credit: https://qadeer786.files.wordpress.com/2013/10/ssldemo1_overview.png
+
+=== Certificates
+
+The following diagram shows how the certificates contain public, private keys and the contents of the key databases of either ends of the SSL channel.
+
+image::ssl_tls_keysharing.png[]
+
+credit: https://qadeer786.files.wordpress.com/2013/10/ssldemo1_keysharing.png
+
+=== Simple example class
+
+[source,java]
+----
+include::../test/java/mq/WmqSslTest.java[]
+----
+
+
+
+== JMS Client
+
+=== Producer
+
+[source,java]
+----
+include::../test/java/mq/jms/SimpleJMSProducer.java[]
+----
+
+=== Consumer 
+
+[source,java]
+----
+include::../test/java/mq/jms/SimpleJMSConsumer.java[]
+----
+
+== References
+
+=== IBM MQ
+
+* https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_8.0.0/com.ibm.mq.dev.doc/q030580_.htm[Installation and configuration of IBM MQ classes for Java]
+* https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_8.0.0/com.ibm.mq.dev.doc/q030590_.htm[What is installed for IBM MQ classes for Java]
+
+=== Maven Dependencies
+
+Download IBM MQ `v8.0.0.7` Client for Java
+
+* https://github.com/junlapong/mvn-3rd-party-lib/tree/master/lib/mq
+
+NOTE: Install library to local maven repository
+
+[source]
+----
+mvn install:install-file -Dfile=lib/mq/com.ibm.mq.allclient.jar -Dpackaging=jar -DgroupId=com.ibm.mq -DartifactId=com.ibm.mq -Dversion=8.0.0.7
+
+mvn install:install-file -Dfile=lib/mq/jms.jar -Dpackaging=jar -DgroupId=com.ibm.mq -DartifactId=com.ibm.mqjms -Dversion=8.0.0.7
+----
+
+NOTE: Add dependency to `pom.xml`
+
+[source,xml]
+----
+<dependency>
+    <groupId>com.ibm.mq</groupId>
+    <artifactId>com.ibm.mq</artifactId>
+    <version>8.0.0.7</version>
+</dependency>
+
+<dependency>
+    <groupId>com.ibm.mq</groupId>
+    <artifactId>com.ibm.mqjms</artifactId>
+    <version>8.0.0.7</version>
+</dependency>
+----

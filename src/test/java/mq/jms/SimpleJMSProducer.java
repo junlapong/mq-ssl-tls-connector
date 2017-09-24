@@ -52,7 +52,7 @@ public class SimpleJMSProducer {
             je.printStackTrace(System.err);
         }
         finally {
-            if (queueManager != null) {}
+            if (queueManager != null) {
                 try {
                     // Disconnecting queue manager
                     queueManager.disconnect();
