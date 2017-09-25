@@ -30,7 +30,7 @@ credit: https://qadeer786.files.wordpress.com/2013/10/ssldemo1_keysharing.png
 
 [source,java]
 ----
-include::../test/java/mq/WmqSslTest.java[]
+include::../src/test/java/mq/WmqSslTest.java[]
 ----
 
 
@@ -41,14 +41,14 @@ include::../test/java/mq/WmqSslTest.java[]
 
 [source,java]
 ----
-include::../test/java/mq/jms/SimpleJMSProducer.java[]
+include::../src/test/java/mq/jms/SimpleJMSProducer.java[]
 ----
 
 === Consumer 
 
 [source,java]
 ----
-include::../test/java/mq/jms/SimpleJMSConsumer.java[]
+include::../src/test/java/mq/jms/SimpleJMSConsumer.java[]
 ----
 
 == References

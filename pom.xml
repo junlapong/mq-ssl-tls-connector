@@ -64,7 +64,7 @@
                         <artifactId>asciidoctor-maven-plugin</artifactId>
                         <version>1.5.5</version>
                         <configuration>
-                            <sourceDirectory>src/docs</sourceDirectory>
+                            <sourceDirectory>${project.basedir}/doc</sourceDirectory>
                             <!-- Attributes common to all output formats -->
                             <attributes>
                                 <sourcedir>${project.build.sourceDirectory}</sourcedir>
