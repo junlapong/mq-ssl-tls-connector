@@ -15,6 +15,9 @@ import javax.net.ssl.TrustManagerFactory;
 import com.ibm.mq.MQC;
 import com.ibm.mq.MQQueueManager;
 
+import org.junit.Test;
+import org.junit.Ignore;
+
 /**
  * Simple command line class to create an SSL connection
  * to a queue manager, with the WMQ Base Java classes.
@@ -29,14 +32,14 @@ public class WmqSslTest {
      *     SVRCONN: DEF CHL(TEST.SSL.CHL)
      *              CHLTYPE(SVRCONN)
      *              SSLCIPH(RC4_MD5_US)
-     * @param args Unused
-     * @throws Exception No exception handling
      */
-    public static void main(String[] args) throws Exception {
+    @Test
+    @Ignore
+    public void testMqConnection() throws Exception {
 
         // Queue manager details
         String qmgrName = "TEST.SSL";
-        Hashtable props = new Hashtable();
+        Hashtable<String, Object> props = new Hashtable<String, Object>();
         props.put(MQC.CHANNEL_PROPERTY,   "TEST.SSL.CHL");
         props.put(MQC.HOST_NAME_PROPERTY, "localhost");
         props.put(MQC.PORT_PROPERTY,      new Integer(1414));
